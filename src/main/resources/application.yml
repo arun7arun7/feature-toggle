@@ -1,0 +1,25 @@
+server:
+  port: 9080
+  servlet:
+    context-path: /feature-toggle
+spring :
+  datasource:
+    jdbc-url: jdbc:mysql://localhost:3306/feature_toggle
+    username: root
+    password: root@1234
+    driver:
+      class: com.mysql.jdbc.Driver
+
+  secondary-datasource:
+    jdbc-url: jdbc:mysql://localhost:3306/movie1
+    username: root
+    password: root@1234
+    driver:
+      class: com.mysql.jdbc.Driver
+
+  http:
+    converters:
+      preferred-json-mapper: gson
+
+hibernate:
+  dialect: org.hibernate.dialect.MySQL5InnoDBDialect
